@@ -1,0 +1,8 @@
+/* pages/taskManage/taskManage.wxss */
+.container{
+  padding: 100rpx 0;
+}
+.weui-cell{
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+}

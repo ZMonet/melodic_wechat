@@ -1,0 +1,69 @@
+/* pages/start/signUp/verification/verificatiion.wxss */
+.container{
+  overflow:hidden;
+}
+.signup-form{
+  padding: 20rpx 50rpx 10rpx 50rpx;
+}
+.signup-form-header{
+  width: 100%;
+}
+.signup-form-table{
+  padding: 60rpx 50rpx;
+  padding-bottom: 45rpx;
+}
+
+/* title */
+.sfh-title{
+  font-size: 27pt;
+  font-weight: 500;
+}
+.sfh-sub-title{
+  padding-top: 3rpx;
+  font-size: 11pt;
+  color: #777;
+  letter-spacing:3rpx;
+}
+.sfh-sub-title>span{
+  color: #4183c4;
+}
+
+/* input-mail */
+.input-mail{
+  width: 100%;
+  height: 120rpx;
+  background-color: #f7f7f7;
+  padding:0 45rpx;
+  font-size: 13pt;
+  box-shadow: 0 0 30rpx 5rpx #fcfcfc;
+}
+.input-mail-bd{
+  padding-left: 30rpx;
+  height: 100%; 
+  flex: 1;
+}
+.input-mail-bd>input{
+  height: 100%;
+}
+.input-mail-ft{
+  height: 100%;
+  color: #999;
+  font-weight: bold;
+  font-size: 13pt;
+}
+.button-next-step{
+  font-size: 13pt;
+  color:#B4B4B4;
+}
+.button-next-step-active{
+  font-size: 13pt;
+  color:#fda085;
+}
+.button-resend-step{
+  font-size: 13pt;
+  color:#B4B4B4;
+}
+.button-resend-step-active{
+  font-size: 13pt;
+  color:#fda085;
+}

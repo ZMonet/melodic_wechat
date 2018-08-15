@@ -1,0 +1,150 @@
+/* pages/addCollectionBox/addCollectionBox.wxss */
+.button-sp-area{
+  padding: 20rpx 200rpx;
+  text-align: center;
+  color: #fff;
+}
+.container{
+  padding-top:220rpx;
+}
+page{
+  background-color: #f8f8f8;
+}
+.weui-cell{
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+}
+.collection-item{
+  color: #2c2c2c;
+  height: 150rpx;
+  background-color: #fff;
+  padding: 10rpx 40rpx;
+  box-shadow: -1rpx 0 40rpx 2rpx #f2f2f2; 
+  border-radius: 15rpx;
+}
+.collection-item-container-show{
+  padding: 0 50rpx;
+  margin: 20rpx 0;
+  webkit-animation: translateX 1s 0s ease-in-out alternate forwards;
+          animation: translateX 1s 0s ease-in-out alternate forwards; 
+}
+.collection-item-container-delete{
+  padding: 0 50rpx;
+  margin: 20rpx 0;
+  -webkit-animation: delete 1s 0s ease-in-out alternate forwards;
+          animation: delete 1s 0s ease-in-out alternate forwards; 
+}
+.collection-item-title{
+  font-size: 14pt;
+  font-weight: 600;
+}
+.collection-item-num{
+  font-size: 12pt;
+  color: #999;
+}
+
+.delete-button-container > image{
+  width: 50rpx;
+  height: 50rpx;
+}
+
+@keyframes delete{
+  0%{
+    transform: translateX(0%);
+  }
+  100%{
+    transform: translateX(100%);
+  }
+}
+
+/* 模态框 */
+@keyframes opacity{
+  0%{
+    opacity: 0
+  }
+  100%{
+    opacity: 0.5
+  }
+}
+
+@keyframes translateY{
+  0%{
+    transform: translateY(100%);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  webkit-animation: opacity .3s 0s ease-in-out alternate forwards;
+          animation: opacity .3s 0s ease-in-out alternate forwards; 
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+
+.modal-dialog {
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 9999;
+  background: #fff;
+  webkit-animation: translateY .3s 0s ease-in-out alternate forwards;
+          animation: translateY .3s 0s ease-in-out alternate forwards; 
+}
+
+.modal-title {
+  padding: 25rpx 40rpx;
+  padding-bottom: 10rpx;
+  font-size: 17pt;
+  color: #030303;
+  font-weight: 600;
+}
+
+.modal-content {
+  padding: 10rpx 40rpx;
+  padding-bottom: 40rpx;
+}
+
+.modal-input {
+  display: flex;
+  background: #fff;
+  border: 2rpx solid #ddd;
+  border-radius: 4rpx;
+  font-size: 28rpx;
+}
+
+
+.input {
+  width: 100%;
+  height: 82rpx;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  color: #333;
+}
+
+input-holder {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  height: 86rpx;
+  border-top: 1px solid #dedede;
+  font-size: 34rpx;
+  line-height: 86rpx;
+}

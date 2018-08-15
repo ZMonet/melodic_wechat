@@ -1,0 +1,67 @@
+<!--index.wxml-->
+<view class="top-message {{hasMessage?'top-message-show':''}}">{{warnInfo}}</view>
+
+<view class='float-panel flex-container-column float-panel-{{floatPanelStatus}}'>
+  <view class='collectoion-container flex-container-column flex-auto'>
+    <view wx:for="{{collections}}" wx:key="{{item.taskBoxUid}}" data-collectionuid='{{item.taskBoxUid}}' bindtap='changeCurrentCollection' class='scale-button collection-item-container flex-container-column flex-container-center-V'>
+      <view class='collection-item-title flex-item'>{{item.taskBoxName}}</view>
+      <view class='collection-item-num flex-item'>{{item.tasks.length}}个任务</view>
+    </view>
+  </view>
+  <view class='flex-container-row flex-container-center-V float-panel-hd'>
+    <view class='flex-item close-button scale-button' bindtap='closeFloatPanel'>
+      <view class='close-button-left'></view>
+      <view class='close-button-right'></view>
+    </view>
+  </view>
+</view>
+
+<view class='page-hd flex-container-column'>
+    <view class='flex-container-row page-title' bindtap='collections'>
+      <view class='flex-item'>{{currentCollection.taskBoxName}}</view>
+      <view class='flex-container-row flex-container-center-H page-img-container scale-button'>
+        <image class='flex-item page-img page-img-{{floatPanelStatus}}' src='/images/arrow_down_black.png'></image>
+      </view>
+    </view>
+    <view class='flex-item page-sub-title'>{{records.length}}/<span>{{completeNum}}</span></view>
+</view>
+
+<view class='container flex-container-cloumn'>
+
+  <view class='container_bd flex-container-column flex-container-center-V'>
+
+    <view wx:for="{{records}}" wx:key="{{item.id}}" class="{{item.status.num === 0?'record-item-invaild':'scale-button'}} record-item record-item-{{item.level.str_en}} flex-container-row flex-container-center-H">
+      <view class='record-item-hd flex-item' bindtap="{{item.status.num === 0?'':'complete'}}" data-index='{{index}}'>
+         <icon wx:if="{{item.status.num === 0}}" class='flex-inline-item' type='clear' size='23' color="#eee"></icon>
+         <icon wx:if="{{item.status.num === 1}}" class='flex-inline-item' type="circle" size='23' color="#eee"></icon> 
+         <icon wx:if="{{item.status.num === 2}}" class='flex-inline-item' type="success" size='23' color="#eee"></icon> 
+      </view>
+      <view class='record-item-bd flex-auto flex-item' bindtap="goDetail" data-index='{{index}}'>
+        {{item.title}} {{item.status.num === 0?' (已过期)':''}}
+      </view>
+      <view class='record-item-ft flex-item'>
+        {{item.level.sign}}
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='bottom-container bottom-container-{{bottom_status}} flex-container-column'>
+  <view class='bottom-container-hd flex-container-row flex-container-center-V' bindtap='bottomControl'>
+    <image class='arrow-img' src='/images/arrow_{{bottom_status}}_white.png'></image>
+  </view>
+  <view class='bottom-container-bd flex-container-row'>
+    <view class='bottom-container-bd-lf flex-container-column flex-container-end-V'>
+      <image bindtap='user_center' class='bottom-img bottom-img-{{bottom_status}}' src='/images/user.png'></image>
+    </view>
+    <view class='bottom-container-bd-mid flex-auto flex-container-center-V-H flex-container-row'>
+      <view class="{{autoAdd?'button-rorateAll':''}} scale-button flex-container-center-V-H flex-container-column add-button" bindtap='addTask' bindlongpress='getSimilarTask'>
+        <image src='/images/add_button.png' class='add-button-img'></image>
+      </view>
+    </view>
+    <view class='bottom-container-bd-rg flex-container-column flex-container-end-V'>
+      <image class='bottom-img bottom-img-{{bottom_status}}' src='/images/statistic.png' bindtap='statistic'></image>
+    </view>
+  </view>
+  <view class='bottom-container-ft flex-container-row'></view>
+</view>

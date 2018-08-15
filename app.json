@@ -1,0 +1,28 @@
+{
+  "pages": [
+    
+    "pages/start/start",
+    "pages/index/index",
+    "pages/statistics/statistics",
+    "pages/personalCenter/personalCenter",
+    "pages/addTask/addTask",
+    "pages/feedback/feedback",
+    "pages/start/loginProblem/loginProblem",
+    "pages/start/loginProblem/problemComplete/problemComplete",
+    "pages/calendar/dayCalendarList/dayCalendarList",
+    "pages/start/signUp/setPassword/setPassword",
+    "pages/start/signUp/verification/verificatiion",
+    "pages/start/signUp/signUp",
+    "pages/logs/logs",
+    "pages/calendar/calendar",
+    "pages/taskManage/taskManage",
+    "pages/addCollectionBox/addCollectionBox"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black"
+  }
+}

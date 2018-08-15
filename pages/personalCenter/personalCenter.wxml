@@ -1,0 +1,74 @@
+<!--pages/personalCenter/personalCenter.wxml-->
+<view class="top-message {{hasMessage?'top-message-show':''}}">{{warnInfo}}</view>
+
+<view class='page-hd flex-container-column'>
+    <view class='flex-container-row page-title' bindtap='collections'>
+      <view class='flex-item'>个人中心</view>
+    </view>    
+</view>
+
+<view class='container flex-container-column'>
+
+  <view class='container-hd flex-container-row'>
+  <view class='scale-button user-info-container flex-container-row flex-auto' bindtap='showDialogBtn'>
+    <view class='user-info-text-container flex-container-column flex-container-center-V flex-auto'>
+      <view class='user-info-name flex-item'>{{userInfo.userName}}</view>
+      <view class='user-info-email flex-itme'>已绑定邮箱({{userInfo.userEmail}})</view>
+    </view>
+  </view>
+  </view>
+
+  <view class='container-bd flex-container-cloumn'>
+
+    <view class='menu-item flex-container-row flex-container-center-H' bindtap='collectionManage'>
+      <view class='menu-item-hd flex-item'>
+        <image class='menu-item-img' src='/images/task_box.png'></image>
+      </view>
+      <view class='menu-item-bd flex-item flex-auto'>收集箱管理</view>
+      <view class='menu-item-ft flex-item'>
+        <view class='arrow-left'></view>
+      </view>
+    </view>
+
+    <view class='menu-item flex-container-row flex-container-center-H' bindtap='calendar'>
+      <view class='menu-item-hd flex-item'>
+        <image class='menu-item-img' src='/images/calendar.png'></image>
+      </view>
+      <view class='menu-item-bd flex-item flex-auto'>任务日历</view>
+      <view class='menu-item-ft flex-item'>
+        <view class='arrow-left'></view>
+      </view>
+    </view>
+
+    <view class='menu-item flex-container-row flex-container-center-H' bindtap='feedback'>
+      <view class='menu-item-hd flex-item'>
+        <image class='menu-item-img' src='/images/feedback.png'></image>
+      </view>
+      <view class='menu-item-bd flex-item flex-auto'>意见与反馈</view>
+      <view class='menu-item-ft flex-item'>
+        <view class='arrow-left'></view>
+      </view>
+    </view>
+
+  </view>
+</view>
+
+<view class='logout-container'>
+  <view class='scale-button logout-button' bindtap='logout' disable="{{logOut}}">
+    <view wx:if="{{!logOut}}">退出当前账号</view>
+    <view wx:if="{{logOut}}"class="loader-inner flex-container-row flex-container-center-V-H ball-clip-rotate">
+      <view></view>退出中
+    </view>
+  </view>
+</view>
+
+<!-- 模态框 -->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-title">更改用户名</view>
+  <view class="modal-content">
+    <view class="modal-input">
+      <input placeholder-class="input-holder" auto-focus='true' bindconfirm="onConfirm" cursor-spacing="20" type="text" maxlength="8" bindinput="newUserNameInput" class="input" placeholder="请输入新的用户名(不超过8个字符)"></input>
+    </view>
+  </view>
+</view>

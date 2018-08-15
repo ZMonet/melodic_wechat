@@ -1,0 +1,127 @@
+<!--pages/addTask/addTask.wxml-->   
+ <view class="top-message {{hasMessage?'top-message-show':''}}">{{warnInfo}}</view> 
+
+ <view class='page-hd flex-container-column page-hd-shadow'>
+    <view class='flex-container-row flex-container-center-H'>
+      <view class='flex-container-column flex-auto'>
+        <view class='flex-item page-title'>{{actionType}}</view>
+        <view class='flex-item page-sub-title_min'>{{actionType === '添加任务'?'新':''}}任务{{record.status.str_ch}}</view>
+      </view>
+      <view wx:if="{{record.status.num !== 0}}" class='flex-item scale-button complete-button' bindtap='complete'>完成</view>
+    </view>
+</view> 
+
+ <view class='container'>
+
+  <view class='weui-cells weui-celss_form'>
+
+    <view class='weui-cell'>
+      <view class="weui-cell__hd">
+        <view class="weui-label">任务名称</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input disabled='{{record.status.num === 0}}' class="weui-input" value='{{record.title}}' bindinput='titleChange' placeholder="请输入任务名称"/>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="weui-cells__title">任务描述</view>
+  <view class="weui-cells weui-cells_after-title">
+
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <textarea disabled='{{record.status.num === 0}}' class="weui-textarea" value='{{record.description}}' bindinput='descriptionChange' placeholder="请输入任务描述" maxlength='100' style="height: 5em"/>
+        <view class="weui-textarea-counter">{{record.description.length}}/100</view>
+      </view>
+    </view>
+
+  </view>
+  
+  <view class="weui-cells__title">时间设置</view>
+  <view class="weui-cells weui-cells_after-title">
+
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">开始时间</view>
+        </view>
+
+        <view class="weui-cell__bd">
+           <picker disabled='{{record.status.num === 0}}' mode="multiSelector" value="{{startTime}}" bindchange="changeStartTime" bindcolumnchange="changeStartTimeColumn" range="{{startTimeArray}}">
+            <view class="weui-input"></view>
+          </picker> 
+        </view>
+
+        <view class="weui-cell__ft weui-cell__ft_in-access">{{record.startTimeStr}}</view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+
+        <view class="weui-cell__hd">
+          <view class="weui-label">结束时间</view>
+        </view>
+
+        <view class="weui-cell__bd">
+           <picker disabled='{{record.status.num === 0}}' mode="multiSelector" value="{{endTime}}" bindchange="changeEndTime" bindcolumnchange="changeEndTimeColumn" range="{{endTimeArray}}">
+            <view class="weui-input"></view>
+          </picker> 
+        </view>
+
+        <view class="weui-cell__ft weui-cell__ft_in-access">{{record.endTimeStr}}</view>
+
+    </view>
+
+  </view>
+
+
+  <view class="weui-cells__title">属性设置</view>
+  <view class="weui-cells weui-cells_after-title">
+
+    <view class="weui-cell weui-cell_input ">
+      <view class="weui-cell__hd">
+        <view class="weui-label">优先级</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker disabled='{{record.status.num === 0}}' mode="selector" value="{{record.level.num}}" range="{{levelList}}" bindchange="levelChange">
+          <view class="weui-input"></view>
+        </picker>
+      </view>
+      <view class="weui-cell__ft weui-cell__ft_in-access">{{record.level === null?'请选择优先级':record.level.str_ch}}</view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">任务重复</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker disabled='{{record.status.num === 0}}' mode="selector" value="{{record.repeat.num}}" range="{{repeatList}}" bindchange="repeatChange">
+          <view class="weui-input"></view>
+        </picker>
+      </view>
+      <view class="weui-cell__ft weui-cell__ft_in-access">{{record.repeat === null?'请选择任务重复':record.repeat.str_ch}}</view>
+    </view>
+
+    <view class="weui-cell weui-cell_input ">
+      <view class="weui-cell__hd">
+        <view class="weui-label">收集箱</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker disabled='{{record.status.num === 0}}' mode="selector" range='{{collectionList}}' bindchange="collectionChange">
+          <view class="weui-input"></view>
+        </picker>
+      </view>
+      <view class="weui-cell__ft weui-cell__ft_in-access">{{record.collection === null?'请选择收集箱':record.collection.taskBoxName}}</view>
+    </view>
+  </view>
+  <view wx:if="{{actionType !== '添加任务'}}" class="flex-item-column button-sp-area">       
+    <view class="scale-button flex-container-row flex-container-center-V-H delete-button" bindtap="deleteTask">删除</view>
+  </view>
+</view> 
+
+       
+     
+
+
+
+
+      

@@ -1,0 +1,55 @@
+/* pages/addTask/addTask.wxss */
+page{
+  background-color: #F8F8F8;
+}
+
+.tui-picker-content{
+  padding: 30rpx;
+  text-align: center;
+}
+.tui-picker-detail{
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #fff;
+  font-size: 35rpx;
+  padding: 5rpx 50rpx;
+  overflow: hidden;
+}
+
+.weui-textarea{
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.container{
+  padding-top: 180rpx;
+  padding-bottom: 40rpx;
+}
+
+.complete-button{
+  color: #fda085;
+}
+
+.weui-cell{
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+}
+.weui-cells__title{
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+}
+.weui-textarea{
+  padding-top: 15rpx;
+  padding-bottom: 10rpx;
+}
+
+.button-sp-area{
+  padding: 40rpx 50rpx;
+  color: #fff;
+}
+.delete-button{
+  background-color: #ed5565;
+  padding: 20rpx;
+  border-radius: 15rpx;
+  box-shadow: -1rpx 0 30rpx 5rpx rgba(200, 0, 0, 0.25); 
+}

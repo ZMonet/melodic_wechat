@@ -1,0 +1,21 @@
+/* pages/feedback/feedback.wxss */
+page{
+  background-color: #f8f8f8;
+}
+.button-sp-area{
+  padding: 40rpx 50rpx;
+  color: #fff;
+}
+.container{
+  padding: 180rpx 0;
+}
+.weui-cell{
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+}
+.submit-button{
+  padding: 20rpx;
+  box-shadow: 5rpx 0 30rpx 5rpx #f5e8bf; 
+  border-radius: 15rpx;
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%); 
+}

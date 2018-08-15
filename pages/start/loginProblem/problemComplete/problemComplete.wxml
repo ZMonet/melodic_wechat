@@ -1,0 +1,25 @@
+<!--pages/start/loginProblem/problemComplete/problemComplete.wxml-->
+<view class='container flex-container-column flex-container-center-V'>
+
+  <view class='flex-container-row flex-container-center-V-H complete-img-container'>
+    <image class='flex-item complete-img' src='/images/mail_complete.png'></image>
+  </view>
+  <view class='flex-container-row flex-container-center-V-H message'>
+    <view>我们已经将密码找回邮件发送到您的邮箱</view>
+  </view>
+  <view class='flex-container-row flex-container-center-V-H email'>
+    <view>{{email}}***@qq.com</view>
+  </view>
+  <view class='flex-container-column flex-container-center-V back-container'>
+    <view class='flex-container-row flex-container-center-V-H back-button scale-button' bindtap='backToHome'>去登录</view>
+  </view>
+</view>
+
+<view class='bottom-bar-logo flex-container-row flex-container-center-V-H'>
+  <view class='flex-item'>
+    <image class='bottom-bar-logo__logo-min' src='/images/logo_min.png'></image>
+  </view>
+  <view class='bottom-bar-logo__text flex-item'>Melodic</view>
+</view>
+
+

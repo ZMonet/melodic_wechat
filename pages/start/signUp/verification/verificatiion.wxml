@@ -1,0 +1,43 @@
+<!--pages/start/signUp/verification/verificatiion.wxml-->
+<view class="top-message {{hasMessage?'top-message-show':''}}">{{warnInfo}}</view>
+
+<view class='container flex-container-column'>
+
+  <view class='signup-form flex-container-column'>
+
+    <view class='signup-form-header flex-container-column flex-container-start-V'>
+      <view class='sfh-title flex-item'>输入验证码</view>
+      <view class='sfh-sub-title flex-item'>我们已经将验证码发送到{{headerEmail}}***@qq.com</view>
+    </view>
+
+    <view class='signup-form-table flex-container-column flex-container-center-H'>
+      <view class='input-mail flex-container-row flex-container-center-H'>
+        <view class='input-mail-hd flex-item'>
+          <image class='input-user-image' src="/images/verification{{Focus||userSignUpMessage.verificationCode!=''?'_active':''}}.png"></image>
+        </view>
+        <view class='input-mail-bd flex-item'>
+          <input placeholder='输入验证码' bindfocus='inputFocus'type="number" bindblur='inputBlur' bindinput='userVerificationInput' value='{{userSignUpMessage.verificationCode}}' placeholder-class='place-holder-style' maxlength='6'></input>
+        </view>
+        <view class='input-mail-ft flex-container-row flex-container-center-H'bindtap='inputMessageDel'>
+          <image class='input-message-del' wx:if="{{userSignUpMessage.verificationCode != ''&&Focus}}" src='/images/input_message_del.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='signup-form-footer flex-container-row'>
+      <view class='flex-container-row flex-container-start-V flex-auto'>
+        <view class="flex-item scale-button button-resend-step{{!disable?'-active':''}}" bindtap="{{!disable?'resend':''}}">重新发送{{resendTime}}</view>
+      </view>
+      <view class='flex-container-row flex-container-end-V flex-auto'>
+        <view class="flex-item scale-button button-next-step{{inforTrue?'-active':''}}" bindtap="{{inforTrue?'nextStep':''}}">下一步</view>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+<view class='bottom-bar-logo flex-container-row flex-container-center-V-H'>
+  <view class='flex-item'>
+    <image class='bottom-bar-logo__logo-min' src='/images/logo_min.png'></image>
+  </view>
+  <view class='bottom-bar-logo__text flex-item'>Melodic</view>
+</view>

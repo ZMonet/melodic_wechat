@@ -1,0 +1,61 @@
+<!--pages/calendar/calendar.wxml-->
+<view class='page-hd flex-container-column'>
+    <view class='flex-container-row flex-container-center-H'>
+      <view class='flex-container-column flex-auto'>
+        <view class='flex-container-row page-title'>日历</view>
+        <view class='flex-container-row page-sub-title_min'>日历中标记了您安排了任务的那一天</view>
+      </view>
+    </view>
+</view>    
+
+<view class="container">  
+  <view class="box">  
+    <view class="box-flex">  
+
+      <view class="flex-container-row">  
+        <view class="item-content" bindtap="doDay" data-key='left'>  
+          <view class="glyphicon glyphicon-triangle-left"></view>  
+        </view>  
+      </view>  
+
+      <view class="flex-container-row flex-auto flex-container-center-V">  
+        <view class="item-content">{{currentDate}}</view>  
+      </view>  
+
+      <view class="flex-container-row">  
+        <view class="item-content" bindtap="doDay" data-key="right">  
+          <view class="glyphicon glyphicon-triangle-right"></view>  
+        </view>  
+      </view>  
+    </view>  
+    <view class="box-flex">  
+      <view class="flex-item">  
+        <view class="item-content">一</view>  
+      </view>  
+      <view class="flex-item">  
+        <view class="item-content">二</view>  
+      </view>  
+      <view class="flex-item">  
+        <view class="item-content">三</view>  
+      </view>  
+      <view class="flex-item">  
+        <view class="item-content">四</view>  
+      </view>  
+      <view class="flex-item">  
+        <view class="item-content">五</view>  
+      </view>  
+      <view class="flex-item">  
+        <view class="item-content">六</view>  
+      </view>  
+      <view class="flex-item">  
+        <view class="item-content">日</view>  
+      </view>  
+    </view>  
+    <view class="box-flex">  
+      <view class="flex-item" wx:for="{{currentDayList}}" wx:for-index='key' wx:for-item="day" wx:key="{{key}}">  
+          <view bindtap="{{day.hasTask?'goDetail':''}}" data-day='{{day.value}}' class="item-content {{day.hasTask?'bk-color-day scale-button':''}}">{{day.value}}</view>  
+      </view>  
+    </view>  
+  </view>  
+
+</view>

@@ -1,0 +1,39 @@
+<!--pages/start/signUp/signUp.wxml-->
+<view class="top-message {{hasMessage?'top-message-show':''}}">{{warnInfo}}</view>
+
+<view class='container flex-container-column'>
+
+  <view class='signup-form flex-container-column'>
+
+    <view class='signup-form-header flex-container-column flex-container-start-V'>
+      <view class='sfh-title flex-item'>输入邮箱账号</view>
+      <view class='sfh-sub-title flex-item'>注册既代表同意<span>使用条款</span>和<span>隐私政策</span></view>
+    </view>
+
+    <view class='signup-form-table flex-container-column flex-container-center-H'>
+      <view class='input-mail flex-container-row flex-container-center-H'>
+        <view class='input-mail-hd flex-item'>
+          <image class='input-user-image' src="/images/user_email{{Focus||userSignUpMessage.email!=''?'_active':''}}.png"></image>
+        </view>
+        <view class='input-mail-bd flex-item'>
+          <input placeholder='仅支持QQ邮箱' bindfocus='inputFocus' type='number' bindblur='inputBlur' bindinput='userEmailInput' value='{{userSignUpMessage.email}}' placeholder-class='place-holder-style' maxlength='10'></input>
+        </view>
+        <view class='input-mail-ft flex-container-row flex-container-center-H'>
+          <image class='input-message-del' wx:if="{{userSignUpMessage.email != ''&&Focus}}" bindtap='inputMessageDel' src='/images/input_message_del.png'></image>
+          <view>@qq.com</view>
+        </view>
+      </view>
+    </view>
+    <view class='signup-form-footer flex-container-row flex-container-end-V'>
+      <view class="scale-button button-next-step{{inforTrue?'-active':''}}" bindtap="{{inforTrue?'nextStep':''}}">下一步</view>
+    </view>
+  </view>
+
+</view>
+
+<view class='bottom-bar-logo flex-container-row flex-container-center-V-H'>
+  <view class='flex-item'>
+    <image class='bottom-bar-logo__logo-min' src='/images/logo_min.png'></image>
+  </view>
+  <view class='bottom-bar-logo__text flex-item'>Melodic</view>
+</view>

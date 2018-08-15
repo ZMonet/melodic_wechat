@@ -1,0 +1,61 @@
+/* pages/calendar/calendar.wxss */
+@import 'icon.wxss';
+
+/* page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  font-size: 15px;
+} */
+.container{
+  margin-top: 220rpx;
+}
+
+.box {
+  border-radius: 15rpx;
+  display: block;
+  margin: 0 50rpx;
+  padding: 40rpx 10rpx 0 10rpx;
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%); 
+  box-shadow: -5rpx 0 60rpx 10rpx #f5e8bf; 
+}
+
+.box-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;  
+}
+
+.flex-item {
+  flex-flow: nowrap;
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: 14.2%;
+}
+
+.item-content {
+  margin: 5px;
+  padding: 0 10px;
+  text-align: center;
+  height: 2rem;
+  line-height: 2rem;
+  color: #fff;
+}
+
+.bk-color-day {
+  background-color: #fff;
+  color: #f5e8bf;
+  border-radius: 10rpx;
+  webkit-animation: scale .5s 0s ease-in-out alternate forwards;
+          animation: scale .5s 0s ease-in-out alternate forwards; 
+}
+
+.item-content-current-day {
+  flex-grow: 2;
+}
+

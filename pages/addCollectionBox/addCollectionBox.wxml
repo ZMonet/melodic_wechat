@@ -1,0 +1,37 @@
+<!--pages/addCollectionBox/addCollectionBox.wxml-->
+<view class="top-message {{hasMessage?'top-message-show':''}}">{{warnInfo}}</view>
+
+<view class='page-hd flex-container-column page-hd-shadow'>
+    <view class='flex-container-row page-title'>
+      <view class='flex-item flex-auto'>收集箱管理</view>
+      <view class='scale-button flex-item' bindtap='showDialogBtn'>+</view>
+    </view>
+    <view class='page-sub-title flex-item'>{{collections.length}}个收集箱</view>
+</view>
+
+<view class='container flex-container-column'>
+
+  <view wx:for="{{collections}}" wx:key="{{item.taskBoxUid}}" class="collection-item-container-{{deleted[index]}} flex-container-column">
+    <view class='scale-button collection-item flex-container-row flex-container-center-H'>
+      <view class='flex-container-column flex-auto'  data-collectionuid='{{item.taskBoxUid}}'  bindtap='goCollection'>
+        <view class='collection-item-title flex-item'>{{item.taskBoxName}}</view>
+        <view class='collection-item-num flex-item'>{{item.tasks.length}}个任务</view>
+      </view>
+      <view wx:if="{{index>0}}" data-taskBoxUid='{{item.taskBoxUid}}' data-index='{{index}}' class='delete-button-container flex-conatiner-row flex-container-V-H' bindtap='deleteTaskBox'>
+        <image class='flex-item' src='/images/delete.png'></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<!-- 模态框 -->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-title">添加收集箱</view>
+  <view class="modal-content">
+    <view class="modal-input">
+      <input placeholder-class="input-holder" auto-focus='true' bindconfirm="onConfirm" cursor-spacing="20" type="text" maxlength="10" bindinput="newCollectionNameInput" class="input" placeholder="请输入收集箱名称"></input>
+    </view>
+  </view>
+</view>

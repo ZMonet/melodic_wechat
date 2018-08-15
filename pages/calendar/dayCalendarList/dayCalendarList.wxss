@@ -1,0 +1,41 @@
+/* pages/calendar/dayCalendarList/dayCalendarList.wxss */
+
+.container{
+  padding-top: 180rpx;
+}
+.container_bd{
+  padding: 0rpx 50rpx;
+}
+.record-item{
+  color: #fff;
+  margin: 20rpx 0;
+  padding: 30rpx;
+  border-radius: 15rpx;
+  box-shadow: 5rpx 0 30rpx 5rpx #e5e5e5; 
+  webkit-animation: translateX 1s 0s ease-in-out alternate forwards;
+          animation: translateX 1s 0s ease-in-out alternate forwards; 
+}
+.record-item-bd{
+  font-size: 12pt;
+  padding: 0 30rpx;
+}
+.record-item-ft{
+  font-size: 13pt;
+  letter-spacing: 2rpx;
+}
+
+.record-item-high{
+  background-color: #ff758c;
+}
+
+.record-item-mid{
+  background-color: #f6d365;
+}
+
+.record-item-low{
+  background-color: #48c6ef;
+}
+
+.record-item-invaild{
+  background-color: #999 !important;
+}

@@ -1,0 +1,42 @@
+<!--pages/calendar/dayCalendarList/dayCalendarList.wxml-->
+
+<view class="top-message {{hasMessage?'top-message-show':''}}">{{warnInfo}}</view>
+
+<view class='page-hd flex-container-column'>
+    <view class='flex-container-row flex-container-center-H'>
+      <view class='flex-container-column flex-auto'>
+
+        <view class='flex-container-row page-title'>当天的任务</view>
+
+        <view class='flex-container-row'> 
+          <view class='flex-container-row flex-auto flex-container-start-V flex-container-center-H page-sub-title'>
+            共<span>{{records.length}}</span>个任务
+          </view>
+          <view class='flex-container-row flex-container-end-V flex-container-center-H page-sub-title_min'>
+            {{currentDateTime}}
+          </view>
+        </view>
+
+      </view>
+    </view>
+</view>    
+
+<view class='container flex-container-cloumn'>
+
+  <view class='container_bd flex-container-column flex-container-center-V'>
+
+    <view wx:for="{{records}}" wx:key="{{item.id}}" class="{{item.status.num === 0?'record-item-invaild':'scale-button'}} record-item record-item-{{item.level.str_en}} flex-container-row flex-container-center-H" bindtap="goDetail" data-index='{{index}}'>
+      <!-- <view class='record-item-hd flex-item' bindtap="{{item.status.num === 0?'':'complete'}}" data-index='{{index}}'>
+         <icon wx:if="{{item.status.num === 0}}" class='flex-inline-item' type='clear' size='23' color="#eee"></icon>
+         <icon wx:if="{{item.status.num === 1}}" class='flex-inline-item' type="circle" size='23' color="#eee"></icon> 
+         <icon wx:if="{{item.status.num === 2}}" class='flex-inline-item' type="success" size='23' color="#eee"></icon> 
+      </view> -->
+      <view class='record-item-bd flex-auto flex-item'>
+        {{item.title}} {{item.status.num === 0?' (已过期)':''}}
+      </view>
+      <view class='record-item-ft flex-item'>
+        {{item.level.sign}}
+      </view>
+    </view>
+  </view>
+</view>

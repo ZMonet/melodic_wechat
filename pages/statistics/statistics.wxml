@@ -1,0 +1,38 @@
+<!--pages/statistics/statistics.wxml-->
+ <view class='page-hd flex-container-column'>
+    <view class='flex-container-row flex-container-center-H'>
+      <view class='flex-container-column flex-auto'>
+        <view class='flex-item page-title'>统计</view>
+        <view class='flex-item page-sub-title_min'>您的任务数据呈现</view>
+      </view>
+    </view>
+</view>    
+
+<view class='container flex-container-column'>
+
+    <view class='scale-button the-best-day flex-container-row flex-container-center-V-H'>
+      <view class='tbd-title flex-item'>您上周的最佳工作日 {{bestDay === '-1'?bestDay:'星期'+bestDay}}</view>
+    </view>
+
+    <view wx:if="{{currentChart === 0}}" class="chart-container flex-container-column">
+      <view class='chart-title flex-container-row flex-container-center-V-H'>总图表</view>
+       <view class='chart-content flex-container-row flex-container-center-V-H'>
+        <canvas canvas-id="pieCanvas" class="canvas flex-item"></canvas>
+      </view> 
+    </view>
+
+    <view wx:if="{{currentChart === 1}}" class='chart-container flex-container-column'>
+      <view class='chart-title flex-container-row flex-container-center-H'>
+        <view class='flex-item flex-auto'>上周任务量统计</view> 
+        <view class='flex-item chart-title-time'>{{currentDateTimeStr}}</view>    
+      </view>
+       <view class='chart-content flex-container-row flex-container-center-V-H'>
+        <canvas canvas-id="columnCanvas" class="canvas flex-item"></canvas>
+      </view> 
+    </view>  
+  
+</view>  
+
+<view class='bottom-button flex-container-row flex-container-center-V-H' bindtap='changeChart'>
+  <image class="change-button-{{currentChart === 0?'down':'up'}} flex-item" src='/images/arrow_down_black_normal.png'></image>
+</view>

@@ -1,0 +1,60 @@
+/* pages/statistics/statistics.wxss */
+.canvas {
+    height: 600rpx;
+}
+.container{
+  padding: 10rpx 45rpx 40rpx 45rpx; 
+  padding-top: 180rpx;
+}
+.chart-container{
+  padding: 20rpx 0 30rpx 0;
+  margin: 30rpx 0;
+  border-radius: 15rpx;
+  box-shadow: 5rpx 0 30rpx 5rpx #f2f2f2; 
+  webkit-animation: translateY .8s 0s ease-in-out alternate forwards;
+          animation: translateY .8s 0s ease-in-out alternate forwards; 
+}
+.chart-title{
+  font-size: 14pt;
+  padding: 20rpx 50rpx 40rpx 50rpx;
+}
+.chart-title-time{
+  font-size: 12pt;
+  color: #999;
+}
+.the-best-day{
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%); 
+  margin-bottom: 10rpx;
+  padding: 20rpx 0;
+  border-radius: 15rpx;
+  box-shadow: 5rpx 0 30rpx 5rpx #f2f2f2; 
+  webkit-animation: translateX .8s 0s ease-in-out alternate forwards;
+          animation: translateX .8s 0s ease-in-out alternate forwards; 
+}
+.tbd-title{
+  font-size: 15pt;
+  color: #fff;
+  font-weight: 700;
+}
+
+.bottom-button{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin:20rpx auto;
+}
+.change-button-down{
+  width: 50rpx;
+  height: 50rpx;
+  transform: rotate(0);
+  transform-origin: center center;
+  transition: .6s;
+}
+.change-button-up{
+  width: 50rpx;
+  height: 50rpx;
+  transform: rotate(180deg);
+  transition: .6s;
+  transform-origin: center center;
+}

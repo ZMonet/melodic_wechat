@@ -1,0 +1,27 @@
+<!--pages/feedback/feedback.wxml-->
+<view class="top-message {{hasMessage?'top-message-show':''}}">{{warnInfo}}</view>
+
+<view class='page-hd flex-container-column page-hd-shadow'>
+    <view class='flex-container-row page-title' bindtap='collections'>
+      <view class='flex-item'>反馈与意见</view>
+    </view>
+    <view class='flex-item page-sub-title_min'>请描述你所遇到的问题</view>
+</view>
+
+<view class='container'>
+  <view class='weui-cells'>
+      <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea class="weui-textarea" value='{{feedback}}' maxlength='200' bindinput='feedbackInput' placeholder="问题描述..." style="height: 10em" />
+                    <view class="weui-textarea-counter">{{feedback.length}}/200</view>
+                </view>
+      </view>
+    </view>
+  </view>
+  <view class="button-sp-area flex-container-column">       
+    <view class="scale-button flex-container-row flex-container-center-V-H submit-button" bindtap="nextStep">提交</view>
+  </view>
+</view>
+ 
+

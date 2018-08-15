@@ -1,0 +1,10 @@
+<!--pages/taskManage/taskManage.wxml-->
+<view class='page_hd flex-container-column'>
+    <view class='flex-item page_title'>任务管理</view>
+</view>
+<view class='container'>
+  <view class='weui-cells'>
+<button class="weui-btn" type="default" plain="true"  >默认收集箱</button>
+<button class="weui-btn" type="default" plain="true"  bindtap="nextStep" >添加新的收集箱</button>
+</view>
+</view>

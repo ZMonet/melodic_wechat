@@ -1,0 +1,56 @@
+<!--pages/start/start.wxml-->
+<view class="top-message {{hasMessage?'top-message-show':''}}">{{warnInfo}}</view>
+
+<view class='container flex-container-column flex-container-center-V'>
+  <view class='top-bar flex-container-row flex-container-start-V flex-container-center-H'>
+    <view bindtap='signUp' class='scale-button input-signup' wx:if="{{loginStatus == 'none'}}">注册</view>
+  </view>
+  <view class='header-logo flex-container-column flex-container-center-V-H'>
+     <image class='scale-button header-logo-img' src='/images/logo.png'></image> 
+  </view>
+  <view class='space-form flex-container-column flex-container-center-V'>
+
+    <view class="input-message{{loginStatus == 'loading'?'-hidden':''}} flex-container-row flex-container-center-H">
+      <view class='input-message-hd flex-item'>
+        <image class='input-user-image' src="/images/user_name{{currentFocus == 'userName'||userCertificate.userName != ''?'_active':''}}.png"></image>
+      </view>
+      <view class='input-message-bd flex-item'>
+        <input bindfocus='inputFocus' bindblur='inputBlur' value='{{userCertificate.userName}}' bindinput='userNameInput' maxlength='17' type='text' id='userName' placeholder='用户名/邮箱' cursor-spacing="10" placeholder-class='place-holder-style'></input>
+      </view>
+      <view class='input-message-ft flex-item' >
+        <image data-type='userName' bindtap='imputMessageDel' wx:if="{{userCertificate.userName!=''&&currentFocus=='userName'}}" class='input-message-del' src='/images/input_message_del.png'></image>
+      </view>
+    </view>
+
+    <view class="input-message{{loginStatus == 'loading'?'-hidden':''}} flex-container-row flex-container-center-H">
+      <view class='input-message-hd flex-item'>
+        <image class='input-user-image' src="/images/user_password{{currentFocus=='userPassword'||userCertificate.password!=''?'_active':''}}.png"></image>
+      </view>
+      <view class='input-message-bd flex-item'>
+        <input bindfocus='inputFocus' bindblur='inputBlur' value='{{userCertificate.password}}' bindinput='userPasswordInput' maxlength='16' class='flex-item' id='userPassword' cursor-spacing="10" type='password' placeholder='密码' placeholder-class='place-holder-style'></input>
+      </view>
+      <view class='input-message-ft flex-item'>
+        <image data-type='password' bindtap='imputMessageDel' wx:if="{{userCertificate.password!=''&&currentFocus == 'userPassword'}}" class='input-message-del' src='/images/input_message_del.png'></image>
+      </view>
+    </view>
+
+    <view  class="scale-button input-login button-submit button-login flex-container-row flex-container-center-V-H " bindtap='logIn'>
+      <view class="input-login-bg flex-item {{loginStatus == 'loading'?'input-login-bg-loading':''}}"></view>
+      <view class='flex-item button-login-loading-content' wx:if="{{loginStatus == 'loading'}}">
+        <view class="double-bounce1"></view>
+        <view class="double-bounce2"></view>
+      </view>
+      <view class='flex-item button-login-text' wx:if="{{loginStatus == 'none'}}">登录</view>
+    </view>
+  </view>
+
+  <view class='footer-extra flex-container-column'>
+    <view class='footer-extra-hd'>
+      <view bindtap="{{loginStatus == 'loading'?'':'solveLoginProblem'}}" class='scale-button signup-message normal-message'>{{loginStatus == 'loading'?loadingMessage:'登录遇到问题？'}}</view>
+    </view>
+    <view class='footer-extra-bd'></view>
+    <view class='footer-extra-ft'></view>
+  </view>
+</view>
+
+<view class='copy-right'>copyright © 2017-2018 Melodic</view>
